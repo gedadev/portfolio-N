@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color-dark: #1F2421;
+    --main-color-light: #DCE1DE;
+    --secondary-color: #216869;
+    --accent-color: #49A078;
+    --highlight-color: #9CC5A1;
+}
+
+a {
+    color: var(--main-color-light);
+}
