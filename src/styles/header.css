@@ -1,6 +1,8 @@
 header {
     background-color: var(--main-color-dark);
     color: var(--main-color-light);
+    position: fixed;
+    width: 100%;
 }
 
 .navbar {
@@ -31,4 +33,71 @@ header {
 
 .nav-link:hover {
     text-shadow: 1px 1px 10px var(--highlight-color);
+}
+
+.ham-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all .3s ease-in-out;
+    background-color: var(--main-color-light);
+}
+
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 0 60px;
+    }
+
+    .nav-menu {
+        gap: 30px;
+    }
+} 
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .ham-menu {
+        display: block;
+    }
+
+    .ham-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .ham-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .ham-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 8vh;
+        left: -100%;
+        gap: 10px;
+        flex-direction: column;
+        background-color: var(--main-color-dark);
+        width: 100%;
+        text-align: center;
+        transition: .5s;
+
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
 }
