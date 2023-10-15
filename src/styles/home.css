@@ -1,0 +1,63 @@
+#Home {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--main-color-dark);
+    color: var(--main-color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.presentation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.presentation:nth-child(2) {
+    font-size: 5.5rem;
+}
+
+.presentation:nth-child(3) {
+    font-size: 1.3rem;
+}
+
+.cta {
+    position: fixed;
+    top: 91vh;
+    cursor: pointer;
+}
+
+.know-me {
+    font-size: 0.8rem;
+    margin: 10px 0;
+    color: var(--highlight-color);
+}
+
+.arrow {
+    left: 25%;
+    display: block;
+    position: absolute;
+    height: 5px;
+    margin: 5px auto;
+    transition: all .3s ease-in-out;
+    background-color: var(--highlight-color);
+    border-radius: 10px;
+}
+
+.arrow:nth-child(1) {
+    width: 15px;
+    transform: translateX(2px) translateY(10px) rotateZ(45deg) ;
+}
+
+.arrow:nth-child(2) {
+    width: 26px;
+    transform: rotateZ(90deg);
+}
+
+.arrow:nth-child(3) {
+    width: 15px;
+    transform: translateX(9px) translateY(10px) rotateZ(-45deg);
+}
