@@ -1,8 +1,9 @@
 #About {
-    height: 75vh;
+    height: auto;
     width: 100%;
     background-color: var(--main-color-light);
     display: flex;
+    padding: 16vh 0 16vh 0;
 }
 
 .about-container {
@@ -14,6 +15,15 @@
     justify-content: center;
     gap: 1.5rem;
     padding-left: 18vw;
+}
+
+.about-title {
+    font-size: 3rem;
+}
+
+.skills-title {
+    font-size: 1.5rem;
+    padding: 20px 0 10px 0;
 }
 
 .skill-item > img {
@@ -33,9 +43,46 @@
     justify-content: center;
     align-items: center;
     padding-right: 8vw;
+    margin-left: 5vw;
 }
 
 .img-container > img {
     max-width: 30rem;
     height: auto;
+}
+
+@media (max-width: 1200px) {
+    .about-container {
+        padding-left: 9vw;
+    }
+
+    .img-container > img {
+        max-width: 25rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 850px) {
+    #About {
+        flex-direction: column;
+        align-items: center;
+        gap: 10vh;
+    }
+
+    .about-container {
+        width: 80%;
+        padding: 0;
+    }
+
+    .img-container {
+        width: 80%;
+    }
+
+    .img-container > img {
+        max-width: 90%;
+    }
+
+    .skill-item > img {
+        width: 3rem;
+    }
 }
