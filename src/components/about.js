@@ -8,6 +8,8 @@ import jestIcon from '../assets/skills-icons/jest-icon.png';
 import gitIcon from '../assets/skills-icons/git-icon.png';
 import cliIcon from '../assets/skills-icons/cli-icon.png';
 
+import aboutImg from '../assets/about-image.png';
+
 export default function createAbout() {
   const about = document.createElement('section');
   const descriptionContainer = document.createElement('div');
@@ -44,6 +46,10 @@ export default function createAbout() {
   descriptionContainer.appendChild(description);
   descriptionContainer.appendChild(skillsTitle);
   descriptionContainer.appendChild(skills);
+
+  const image = new Image();
+  image.src = aboutImg;
+  imgContainer.appendChild(image);
 
   about.appendChild(descriptionContainer);
   about.appendChild(imgContainer);
