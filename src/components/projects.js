@@ -10,7 +10,7 @@ export default function createProjects() {
     battleship: {
       title: 'Battleship',
       technologies: 'html, css, javascript, webpack',
-      description: 'Enim excepteur id dolor eiusmod dolore ea pariatur ipsum duis incididunt qui.',
+      description: 'Laborum cillum esse cupidatat sunt officia do dolor officia mollit adipisicing aliqua eu. Cupidatat cillum ipsum cillum dolor enim exercitation labore mollit dolore sit mollit mollit irure in. Nostrud voluptate exercitation est est consequat cillum consectetur nisi nisi non. Ea voluptate anim ea nisi sint officia adipisicing sit mollit culpa enim cupidatat Lorem. Id anim consequat consequat incididunt veniam.',
       repo: 'https://github.com/gedadev/battleship/',
       url: 'https://gedadev.github.io/battleship/',
       preview: battleshipImg,
@@ -18,7 +18,7 @@ export default function createProjects() {
     weatherReport: {
       title: 'Weather Report',
       technologies: 'html, css, javascript, webpack',
-      description: 'Amet excepteur eu enim consectetur excepteur tempor pariatur esse mollit laborum laborum ut sunt excepteur.',
+      description: 'Laborum quis adipisicing dolor laboris eiusmod deserunt ipsum adipisicing ad exercitation do in. Ullamco cupidatat commodo mollit consectetur qui eiusmod consequat exercitation commodo pariatur consectetur culpa laboris ullamco. Laboris dolor fugiat aliqua ipsum mollit irure deserunt cupidatat laboris magna sit veniam occaecat ex. Irure ut qui esse aliquip laborum irure ipsum aliqua ullamco adipisicing officia.',
       repo: 'https://github.com/gedadev/weatherReport',
       url: 'https://gedadev.github.io/weatherReport/',
       preview: weatherImg,
@@ -26,7 +26,7 @@ export default function createProjects() {
     library: {
       title: 'Library',
       technologies: 'html, css, javascript',
-      description: 'Laboris sunt qui deserunt quis Lorem excepteur aute nisi laborum nisi sit et deserunt.',
+      description: 'Id laborum ipsum qui minim mollit. Aliquip Lorem ex laborum occaecat. Ut officia consequat anim sit excepteur ex magna. Eiusmod pariatur ullamco voluptate fugiat qui laboris ullamco incididunt consectetur excepteur do enim ex. Est ex consectetur eiusmod dolore ipsum. Laborum labore ex do tempor ipsum.',
       repo: 'https://github.com/gedadev/libraryApp',
       url: 'https://gedadev.github.io/libraryApp/',
       preview: libraryImg,
@@ -63,7 +63,7 @@ export default function createProjects() {
     previewContainer.className = 'project-preview';
 
     title.innerText = project.title;
-    technologies.innerText = project.technologies;
+    technologies.innerText = `Technologies: ${project.technologies}`;
     description.innerText = project.description;
     repo.href = project.repo;
     repoBtn.innerHTML = 'Code <i class="fa-brands fa-github"></i>';
