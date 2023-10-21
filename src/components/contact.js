@@ -30,18 +30,21 @@ export default function createContact() {
   submitFormButton.className = 'submit-btn';
 
   formInputs.name.input.type = 'text';
+  formInputs.name.input.placeholder = 'John Doe';
   formInputs.email.input.type = 'email';
+  formInputs.email.input.placeholder = 'jdoe@domain.com';
+  formInputs.message.input.placeholder = 'Start typing...';
   submitFormButton.type = 'submit';
   submitFormButton.innerHTML = 'Send <i class="fa-solid fa-share-from-square"></i>';
   submitFormButton.setAttribute('form', 'contact-form');
 
   sectionTitle.innerText = 'Ready to collaborate?';
-  formEngageText.innerText = 'Leave me a message, or you can reach me by my online networks in the sidebar';
+  formEngageText.innerText = 'Leave me a message, or you can reach me by my online channels in the sidebar';
 
   Object.entries(formInputs).forEach((formInput) => {
     const inputContainer = document.createElement('div');
     inputContainer.className = 'input-container';
-    formInput[1].label.innerText = `Your ${formInput[0][0].toUpperCase().concat(formInput[0].slice(1))}: `;
+    formInput[1].label.innerText = `Your ${formInput[0]}: (*)`;
     formInput[1].label.htmlFor = formInput[0];
     formInput[1].input.id = formInput[0];
     formInput[1].input.setAttribute('autocomplete', 'off');
