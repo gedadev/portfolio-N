@@ -1,0 +1,25 @@
+footer {
+    background-color: var(--main-color-dark);
+    color: var(--main-color-light);
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+    padding: 2vh 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .6rem;
+}
+
+.channels-title {
+    font-size: 1rem;
+    margin: 1vh 0;
+}
+
+.channels {
+    display: flex;
+    gap: 18px;
+    font-size: 1.6rem;
+}
