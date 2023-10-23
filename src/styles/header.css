@@ -36,6 +36,10 @@ header {
     text-shadow: 1px 1px 10px var(--highlight-color);
 }
 
+.nav-link.active {
+    color: var(--accent-color);
+}
+
 .ham-menu {
     display: none;
     cursor: pointer;

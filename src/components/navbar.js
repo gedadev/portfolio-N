@@ -1,4 +1,33 @@
 export default class Navbar {
+  static navLinks = [];
+
+  constructor(sections) {
+    this.sections = sections;
+  }
+
+  createScrollspy() {
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      this.sections.forEach((section) => {
+        if (window.scrollY > (section.offsetTop * 0.9)
+          && window.scrollY < (section.offsetTop * 1.8)) {
+          currentSection = section.id;
+        }
+        if (window.scrollY < (this.sections[0].scrollHeight * 0.9)) {
+          currentSection = this.sections[0].id;
+        }
+      });
+      Navbar.navLinks.forEach((link) => {
+        if (link.getAttribute('href').slice(1) === currentSection) {
+          link.classList.add('active');
+        }
+        if (link.getAttribute('href').slice(1) !== currentSection) {
+          link.classList.remove('active');
+        }
+      });
+    });
+  }
+
   static createNavbar() {
     const navbar = document.createElement('nav');
     const branding = document.createElement('h1');
@@ -26,6 +55,7 @@ export default class Navbar {
     navbar.appendChild(branding);
     navbar.appendChild(menu);
     navbar.appendChild(Navbar.createHamburgerMenu(menu, navLinks));
+    Navbar.navLinks = navLinks;
 
     return navbar;
   }
