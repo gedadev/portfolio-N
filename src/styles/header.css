@@ -13,6 +13,7 @@ header {
     align-items: center;
     padding: 0 120px;
     box-shadow: 1px 1px 8px var(--highlight-color);
+    transition: all .6s;
 }
 
 .nav-menu {
@@ -25,11 +26,13 @@ header {
 .branding {
     font-size: 2.5rem;
     font-family: 'Monofett', monospace;
+    transition: all .6s;
 }
 
 .nav-link {
     font-family: 'Montserrat', sans-serif;
-    transition: text-shadow .5s;
+    transition: all .6s;
+    font-size: 1rem;
 }
 
 .nav-link:hover {

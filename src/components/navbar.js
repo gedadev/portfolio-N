@@ -1,4 +1,9 @@
+/* eslint-disable no-param-reassign */
 export default class Navbar {
+  static navbar;
+
+  static branding;
+
   static navLinks = [];
 
   constructor(sections) {
@@ -28,12 +33,29 @@ export default class Navbar {
     });
   }
 
+  static shrinkNavbar() {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > (document.documentElement.clientHeight * 0.6)) {
+        Navbar.navbar.style.minHeight = '6vh';
+        Navbar.branding.style.fontSize = '2rem';
+        Navbar.navLinks.forEach((link) => {
+          link.style.fontSize = '0.8rem';
+        });
+      } else {
+        Navbar.navbar.style.minHeight = '8vh';
+        Navbar.branding.style.fontSize = '2.5rem';
+        Navbar.navLinks.forEach((link) => {
+          link.style.fontSize = '1rem';
+        });
+      }
+    });
+  }
+
   static createNavbar() {
     const navbar = document.createElement('nav');
     const branding = document.createElement('h1');
     const menu = document.createElement('ul');
     const navItems = ['Home', 'About', 'Projects', 'Contact'];
-    const navLinks = [];
 
     navbar.className = 'navbar';
     branding.className = 'branding';
@@ -45,17 +67,20 @@ export default class Navbar {
       const navLink = document.createElement('a');
       navItem.className = 'nav-item';
       navLink.className = 'nav-link';
-      navLink.href = `#${item}`;
+      navLink.href = `#${item.toLowerCase()}`;
       navLink.innerText = item;
       navItem.appendChild(navLink);
       menu.appendChild(navItem);
-      navLinks.push(navLink);
+      Navbar.navLinks.push(navLink);
     });
 
     navbar.appendChild(branding);
     navbar.appendChild(menu);
-    navbar.appendChild(Navbar.createHamburgerMenu(menu, navLinks));
-    Navbar.navLinks = navLinks;
+    navbar.appendChild(Navbar.createHamburgerMenu(menu, Navbar.navLinks));
+
+    Navbar.navbar = navbar;
+    Navbar.branding = branding;
+    Navbar.shrinkNavbar();
 
     return navbar;
   }
