@@ -6,6 +6,7 @@ footer {
 }
 
 .footer-container {
+    height: 12vh;
     padding: 2vh 10vw;
     display: flex;
     justify-content: space-between;
@@ -15,11 +16,19 @@ footer {
 
 .channels-title {
     font-size: 1rem;
-    margin: 1vh 0;
+    margin: 2vh 0;
 }
 
 .channels {
     display: flex;
     gap: 18px;
     font-size: 1.6rem;
+    flex-direction: column;
+}
+
+.channels-container {
+    text-shadow: 1px 1px 10px var(--main-color-dark);
+    position: fixed;
+    top: 68vh;
+    left: 5vw;
 }
