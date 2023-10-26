@@ -16,7 +16,7 @@ footer {
 
 .channels-title {
     font-size: 1rem;
-    margin: 2vh 0;
+    margin-bottom: 2vh;
 }
 
 .channels {
@@ -31,4 +31,23 @@ footer {
     position: fixed;
     top: 68vh;
     left: 5vw;
+}
+
+@media (max-width: 700px) {
+    .footer-container {
+        font-size: .4rem;
+    }
+
+    .channels-container {
+        opacity: 0.8;
+        top: 75vh;
+    }
+
+    .channels-title {
+        font-size: 0.8rem;
+    }
+    
+    .channels {
+        font-size: 1rem;
+    }
 }
