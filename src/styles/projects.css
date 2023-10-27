@@ -1,4 +1,4 @@
-#Projects {
+#projects {
     width: 100%;
     height: auto;
     background: var(--highlight-color);
@@ -85,7 +85,7 @@
 }
 
 .project-preview > img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 @media (max-width: 1200px) {
@@ -107,5 +107,19 @@
     .project-preview > img {
         width: 100%;
         height: auto;
+    }
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    .info-container > a {
+        align-self: center;
+    }
+
+    .info-container > a:last-child {
+        margin: 0;
     }
 }
