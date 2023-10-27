@@ -6,7 +6,7 @@ const projects = {
   battleship: {
     title: 'Battleship',
     technologies: 'html, css, javascript, webpack',
-    description: 'Laborum cillum esse cupidatat sunt officia do dolor officia mollit adipisicing aliqua eu. Cupidatat cillum ipsum cillum dolor enim exercitation labore mollit dolore sit mollit mollit irure in. Nostrud voluptate exercitation est est consequat cillum consectetur nisi nisi non. Ea voluptate anim ea nisi sint officia adipisicing sit mollit culpa enim cupidatat Lorem. Id anim consequat consequat incididunt veniam.',
+    description: 'The classic game Battleship, each player takes 5 ships placed randomly in the board and takes turns to perform a hit in the opponent’s board. The game finish when a player runs out of ships.',
     repo: 'https://github.com/gedadev/battleship/',
     url: 'https://gedadev.github.io/battleship/',
     preview: battleshipImg,
@@ -22,7 +22,7 @@ const projects = {
   library: {
     title: 'Library',
     technologies: 'html, css, javascript',
-    description: 'Id laborum ipsum qui minim mollit. Aliquip Lorem ex laborum occaecat. Ut officia consequat anim sit excepteur ex magna. Eiusmod pariatur ullamco voluptate fugiat qui laboris ullamco incididunt consectetur excepteur do enim ex. Est ex consectetur eiusmod dolore ipsum. Laborum labore ex do tempor ipsum.',
+    description: 'With this app you can keep track of your reading list, with an indicator that shows if the book is already read. You can save basic information of the book like title, author and number of pages.',
     repo: 'https://github.com/gedadev/libraryApp',
     url: 'https://gedadev.github.io/libraryApp/',
     preview: libraryImg,
