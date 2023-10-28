@@ -1,6 +1,18 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-destructuring */
 export default class Contact {
+  static formValidations(inputs) {
+    inputs.forEach((input) => {
+      input.input.addEventListener('input', () => {
+        if (input.input.validity.valid) {
+          input.errorMsg.style.display = 'none';
+        } else {
+          Contact.validateInput(input.input, input.errorMsg);
+        }
+      });
+    });
+  }
+
   static createContactSection() {
     const contactSection = document.createElement('section');
     const sectionTitle = document.createElement('h2');
@@ -24,14 +36,17 @@ export default class Contact {
       name: {
         label: document.createElement('label'),
         input: document.createElement('input'),
+        errorMsg: document.createElement('span'),
       },
       email: {
         label: document.createElement('label'),
         input: document.createElement('input'),
+        errorMsg: document.createElement('span'),
       },
       message: {
         label: document.createElement('label'),
         input: document.createElement('textarea'),
+        errorMsg: document.createElement('span'),
       },
     };
 
@@ -59,12 +74,14 @@ export default class Contact {
       formInput[1].input.required = true;
       inputContainer.appendChild(formInput[1].label);
       inputContainer.appendChild(formInput[1].input);
+      inputContainer.appendChild(formInput[1].errorMsg);
       contactForm.appendChild(inputContainer);
     });
 
     formContainer.appendChild(formEngageText);
     formContainer.appendChild(contactForm);
     formContainer.appendChild(submitFormButton);
+    Contact.formValidations(Object.values(formInputs));
 
     return formContainer;
   }

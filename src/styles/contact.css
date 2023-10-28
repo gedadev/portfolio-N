@@ -53,6 +53,24 @@ input, textarea {
     height: 35px;
 }
 
+.input-container > span {
+    align-self: flex-start;
+    background-color: rgb(255, 162, 162);
+    color: var(--main-color-dark);
+    font-size: 0.8rem;
+    border-radius: 10px;
+    padding: 5px 10px;
+    opacity: 0.7;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: min(10%, 50px);
+    display: none;
+}
+
+.input-container:last-child > span {
+    margin-top: 175px;
+}
+
 .submit-btn {
     background-color: var(--accent-color);
     margin: auto;
