@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-destructuring */
 export default class Contact {
-  static formValidations(inputs) {
+  static formValidations(inputs, submitBtn) {
     inputs.forEach((input) => {
       input.input.addEventListener('input', () => {
         if (input.input.validity.valid) {
@@ -9,8 +9,23 @@ export default class Contact {
         } else {
           Contact.validateInput(input.input, input.errorMsg);
         }
+        submitBtn.disabled = !Contact.enableButton(inputs);
       });
     });
+  }
+
+  static validateInput(input, errorMsg) {
+    if (input.validity.valueMissing) {
+      errorMsg.innerText = 'You must fill this field to continue';
+      errorMsg.style.display = 'inline';
+    }
+  }
+
+  static enableButton(inputs) {
+    for (let i = 0; i < inputs.length; i += 1) {
+      if (!inputs[i].input.validity.valid) return false;
+    }
+    return true;
   }
 
   static createContactSection() {
@@ -53,6 +68,7 @@ export default class Contact {
     formContainer.className = 'form-container';
     formEngageText.className = 'engage-msg';
     contactForm.id = 'contact-form';
+    contactForm.noValidate = true;
     submitFormButton.className = 'submit-btn';
     formInputs.name.input.type = 'text';
     formInputs.name.input.placeholder = 'John Doe';
@@ -62,6 +78,7 @@ export default class Contact {
     submitFormButton.type = 'submit';
     submitFormButton.innerHTML = 'Send <i class="fa-solid fa-share-from-square"></i>';
     submitFormButton.setAttribute('form', 'contact-form');
+    submitFormButton.disabled = true;
     formEngageText.innerText = 'Leave me a message, or you can reach me by my online channels';
 
     Object.entries(formInputs).forEach((formInput) => {
@@ -81,7 +98,7 @@ export default class Contact {
     formContainer.appendChild(formEngageText);
     formContainer.appendChild(contactForm);
     formContainer.appendChild(submitFormButton);
-    Contact.formValidations(Object.values(formInputs));
+    Contact.formValidations(Object.values(formInputs), submitFormButton);
 
     return formContainer;
   }

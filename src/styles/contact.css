@@ -89,6 +89,17 @@ input, textarea {
     color: var(--main-color-dark);
 }
 
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.submit-btn:disabled:hover {
+    background-color: var(--accent-color);
+    box-shadow: none;
+    color: var(--main-color-light);
+}
+
 #message {
     width: min(80%,500px);
     resize: none;
