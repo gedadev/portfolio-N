@@ -11,7 +11,7 @@ export default class Footer {
     footerContainer.appendChild(Footer.createChannels());
     footerContainer.appendChild(Footer.createCredits());
 
-    Footer.moveChannels();
+    // Footer.moveChannels();
 
     return footerContainer;
   }
@@ -84,16 +84,16 @@ export default class Footer {
     return creditsContainer;
   }
 
-  static moveChannels() {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY
-        > (document.body.scrollHeight - document.documentElement.clientHeight) * 0.98) {
-        Footer.channels.style.position = 'static';
-        Footer.channelList.style.flexDirection = 'row';
-      } else {
-        Footer.channels.style.position = 'fixed';
-        Footer.channelList.style.flexDirection = 'column';
-      }
-    });
-  }
+  // static moveChannels() {
+  //   window.addEventListener('scroll', () => {
+  //     if (window.scrollY
+  //       > (document.body.scrollHeight - document.documentElement.clientHeight) * 0.98) {
+  //       Footer.channels.style.position = 'static';
+  //       Footer.channelList.style.flexDirection = 'row';
+  //     } else {
+  //       Footer.channels.style.position = 'fixed';
+  //       Footer.channelList.style.flexDirection = 'column';
+  //     }
+  //   });
+  // }
 }

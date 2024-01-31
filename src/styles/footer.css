@@ -23,14 +23,10 @@ footer {
     display: flex;
     gap: 18px;
     font-size: 1.4rem;
-    flex-direction: column;
 }
 
 .channels-container {
     text-shadow: 1px 1px 10px var(--main-color-dark);
-    position: fixed;
-    top: 72vh;
-    left: 5vw;
     opacity: 0.7;
 }
 
