@@ -4,11 +4,11 @@ import jsIcon from '../assets/skills-icons/javascript-icon.png';
 import reactIcon from '../assets/skills-icons/react-icon.png';
 import nodeIcon from '../assets/skills-icons/node-icon.png';
 import webpackIcon from '../assets/skills-icons/webpack-icon.png';
-import jestIcon from '../assets/skills-icons/jest-icon.png';
+// import jestIcon from '../assets/skills-icons/jest-icon.png';
 import gitIcon from '../assets/skills-icons/git-Icon.png';
-import cliIcon from '../assets/skills-icons/cli-icon.png';
+// import cliIcon from '../assets/skills-icons/cli-icon.png';
 
 const techIcons = [htmlIcon, cssIcon, jsIcon, reactIcon,
-  nodeIcon, webpackIcon, jestIcon, gitIcon, cliIcon];
+  nodeIcon, webpackIcon, gitIcon];
 
 export default techIcons;

@@ -34,7 +34,7 @@ export default class About {
     skills.className = 'skills';
 
     title.innerText = 'About Me';
-    description.innerText = 'As a software engineer I find web development as an excellent field where I can apply my skills in designing, developing and all related to building software. I am motivated for a life long learning philosophy, making me enjoy the process of creating things for the web.';
+    description.innerText = 'As a software engineer I find in web development an excellent field where I can apply my skills building software, motivated by a life long learning philosophy. I enjoy transforming ideas into code. ';
     skillsTitle.innerText = 'Technologies I work with:';
 
     icons.forEach((icon) => {
