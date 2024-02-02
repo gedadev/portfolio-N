@@ -1,15 +1,34 @@
+import Footer from './footer.js';
+
 /* eslint-disable no-param-reassign */
 export default class Home {
   static callToAction;
+
+  static channels = Footer.createChannels();
 
   static createHomeSection() {
     const home = document.createElement('section');
 
     home.id = 'home';
     home.appendChild(Home.createPresentation());
+    home.appendChild(Home.channels.children[1]);
+    home.appendChild(Home.createContactLink());
     home.appendChild(Home.createCTA());
 
     return home;
+  }
+
+  static createContactLink() {
+    const contactButton = document.createElement('button');
+    const a = document.createElement('a');
+
+    contactButton.type = 'button';
+    contactButton.innerHTML = 'Email <i class="fa-solid fa-envelope"></i>';
+    contactButton.className = 'button contact-btn';
+    a.href = '#contact';
+    a.appendChild(contactButton);
+
+    return a;
   }
 
   static createPresentation() {
