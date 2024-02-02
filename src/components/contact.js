@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable prefer-destructuring */
+
 export default class Contact {
   static formValidations(inputs, submitBtn) {
     inputs.forEach((input) => {
@@ -69,7 +69,7 @@ export default class Contact {
     formEngageText.className = 'engage-msg';
     contactForm.id = 'contact-form';
     contactForm.noValidate = true;
-    submitFormButton.className = 'submit-btn';
+    submitFormButton.className = 'button submit-btn';
     formInputs.name.input.type = 'text';
     formInputs.name.input.placeholder = 'John Doe';
     formInputs.email.input.type = 'email';
@@ -79,19 +79,20 @@ export default class Contact {
     submitFormButton.innerHTML = 'Send <i class="fa-solid fa-share-from-square"></i>';
     submitFormButton.setAttribute('form', 'contact-form');
     submitFormButton.disabled = true;
-    formEngageText.innerText = 'Leave me a message, or you can reach me by my online channels';
+    formEngageText.innerText = 'Leave me a message, and we can talk:';
 
     Object.entries(formInputs).forEach((formInput) => {
+      const [inputName, inputProps] = formInput;
       const inputContainer = document.createElement('div');
       inputContainer.className = 'input-container';
-      formInput[1].label.innerText = `Your ${formInput[0]}: (*)`;
-      formInput[1].label.htmlFor = formInput[0];
-      formInput[1].input.id = formInput[0];
-      formInput[1].input.setAttribute('autocomplete', 'off');
-      formInput[1].input.required = true;
-      inputContainer.appendChild(formInput[1].label);
-      inputContainer.appendChild(formInput[1].input);
-      inputContainer.appendChild(formInput[1].errorMsg);
+      inputProps.label.innerText = `Your ${inputName}: (*)`;
+      inputProps.label.htmlFor = inputName;
+      inputProps.input.id = inputName;
+      inputProps.input.setAttribute('autocomplete', 'off');
+      inputProps.input.required = true;
+      inputContainer.appendChild(inputProps.label);
+      inputContainer.appendChild(inputProps.input);
+      inputContainer.appendChild(inputProps.errorMsg);
       contactForm.appendChild(inputContainer);
     });
 
