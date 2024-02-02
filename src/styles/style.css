@@ -21,3 +21,21 @@
 a {
     color: var(--main-color-light);
 }
+
+.button {
+    background-color: var(--accent-color);
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    transition: all .6s;
+    color: var(--main-color-light);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.button:hover {
+    background-color: var(--main-color-light);
+    box-shadow: 1px 1px 12px var(--main-color-dark);
+    color: var(--main-color-dark);
+}

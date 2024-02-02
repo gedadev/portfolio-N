@@ -1,3 +1,5 @@
+import resume from '../assets/resume.pdf';
+
 export default class Footer {
   static channels;
 
@@ -31,19 +33,9 @@ export default class Footer {
         link: 'https://www.linkedin.com/in/gedabg/',
         icon: '<i class="fa-brands fa-linkedin"></i>',
       },
-      twitter: {
-        name: 'twitter',
-        link: 'https://twitter.com/gedauwu',
-        icon: '<i class="fa-brands fa-square-x-twitter"></i>',
-      },
-      email: {
-        name: 'email',
-        link: 'gedaias@geda.dev',
-        icon: '<i class="fa-solid fa-envelope"></i>',
-      },
       resume: {
-        name: 'resume',
-        link: '',
+        name: 'CV',
+        link: resume,
         icon: '<i class="fa-solid fa-file-lines"></i>',
       },
     };
@@ -51,13 +43,14 @@ export default class Footer {
     channelsContainer.className = 'channels-container';
     channelsTitle.className = 'channels-title';
     channelList.className = 'channels';
-    channelsTitle.innerText = 'Find me online';
+    channelsTitle.innerText = 'More about me';
 
     Object.values(channels).forEach((item) => {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = item.link;
       a.title = item.name;
+      a.target = '_blank';
       li.innerHTML = item.icon;
       a.appendChild(li);
       channelList.appendChild(a);
