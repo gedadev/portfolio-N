@@ -47,6 +47,8 @@ export default class Contact {
     const formEngageText = document.createElement('p');
     const contactForm = document.createElement('form');
     const submitFormButton = document.createElement('button');
+    const externalComposeButton = document.createElement('button');
+    const copyEmailButton = document.createElement('button');
     const formInputs = {
       name: {
         label: document.createElement('label'),
@@ -66,20 +68,37 @@ export default class Contact {
     };
 
     formContainer.className = 'form-container';
+
     formEngageText.className = 'engage-msg';
+    formEngageText.innerText = 'Leave me a message, and we can talk:';
+
     contactForm.id = 'contact-form';
     contactForm.noValidate = true;
-    submitFormButton.className = 'button submit-btn';
+
     formInputs.name.input.type = 'text';
     formInputs.name.input.placeholder = 'John Doe';
     formInputs.email.input.type = 'email';
     formInputs.email.input.placeholder = 'jdoe@domain.com';
     formInputs.message.input.placeholder = 'Start typing...';
+
+    submitFormButton.className = 'button submit-btn';
     submitFormButton.type = 'submit';
     submitFormButton.innerHTML = 'Send <i class="fa-solid fa-share-from-square"></i>';
     submitFormButton.setAttribute('form', 'contact-form');
     submitFormButton.disabled = true;
-    formEngageText.innerText = 'Leave me a message, and we can talk:';
+
+    externalComposeButton.innerHTML = 'Compose on your app <i class="fa-solid fa-pen-to-square"></i>';
+    externalComposeButton.className = 'button external-btn';
+    externalComposeButton.addEventListener('click', () => {
+      window.location.href = 'mailto:gedaias@geda.dev?subject=Contact from geda.dev';
+    });
+
+    copyEmailButton.innerHTML = 'Copy email to clipboard <i class="fa-solid fa-copy"></i>';
+    copyEmailButton.className = 'button copy-btn';
+    copyEmailButton.addEventListener('click', () => {
+      navigator.clipboard.writeText('gedaias@geda.dev');
+      copyEmailButton.innerHTML = 'Email copied successfully <i class="fa-solid fa-check"></i>';
+    });
 
     Object.entries(formInputs).forEach((formInput) => {
       const [inputName, inputProps] = formInput;
@@ -99,6 +118,8 @@ export default class Contact {
     formContainer.appendChild(formEngageText);
     formContainer.appendChild(contactForm);
     formContainer.appendChild(submitFormButton);
+    formContainer.appendChild(externalComposeButton);
+    formContainer.appendChild(copyEmailButton);
     Contact.formValidations(Object.values(formInputs), submitFormButton);
 
     return formContainer;
