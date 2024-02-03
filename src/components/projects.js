@@ -4,13 +4,21 @@ export default class Projects {
   static createProjectsSection() {
     const projectsSection = document.createElement('section');
     const sectionTitle = document.createElement('h2');
+    const githubButton = document.createElement('button');
+    const githubLink = document.createElement('a');
 
     projectsSection.id = 'projects';
     sectionTitle.className = 'project-section-title';
-    sectionTitle.innerText = 'My recent work';
+    sectionTitle.innerText = 'My recent projects';
+    githubButton.className = 'button github-btn';
+    githubButton.innerHTML = 'More on my github profile <i class="fa-brands fa-github"></i>';
+    githubLink.href = 'https://github.com/gedadev';
+    githubLink.appendChild(githubButton);
+    githubLink.target = '_blank';
 
     projectsSection.appendChild(sectionTitle);
     projectsSection.appendChild(Projects.createProjectCards());
+    projectsSection.appendChild(githubLink);
 
     return projectsSection;
   }
