@@ -74,6 +74,8 @@ export default class Contact {
 
     contactForm.id = 'contact-form';
     contactForm.noValidate = true;
+    contactForm.action = 'https://formspree.io/f/xbjnggbv';
+    contactForm.method = 'POST';
 
     formInputs.name.input.type = 'text';
     formInputs.name.input.placeholder = 'John Doe';
@@ -109,6 +111,7 @@ export default class Contact {
       inputProps.input.id = inputName;
       inputProps.input.setAttribute('autocomplete', 'off');
       inputProps.input.required = true;
+      inputProps.input.name = inputName;
       inputContainer.appendChild(inputProps.label);
       inputContainer.appendChild(inputProps.input);
       inputContainer.appendChild(inputProps.errorMsg);
