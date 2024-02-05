@@ -13,10 +13,12 @@
 
 .project-section-title {
     font-size: 2.5rem;
+    padding: 0 1rem;
+    text-align: center;
 }
 
 .projects-container {
-    width: 75%;
+    width: min(75%, 1500px);
     display: flex;
     flex-direction: column;
     gap: 3rem;
