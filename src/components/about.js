@@ -4,17 +4,22 @@ import aboutImg from '../assets/about-image.png';
 export default class About {
   static createAboutSection() {
     const about = document.createElement('section');
+    const container = document.createElement('div');
     const imgContainer = document.createElement('div');
 
     about.id = 'about';
+    container.className = 'about-container';
     imgContainer.className = 'img-container';
 
     const image = new Image();
     image.src = aboutImg;
     imgContainer.appendChild(image);
 
-    about.appendChild(About.createDescription());
-    about.appendChild(imgContainer);
+    container.appendChild(About.createDescription());
+    container.appendChild(imgContainer);
+    container.appendChild(About.createSkills());
+
+    about.appendChild(container);
 
     return about;
   }
@@ -23,21 +28,29 @@ export default class About {
     const descriptionContainer = document.createElement('div');
     const title = document.createElement('h2');
     const description = document.createElement('p');
-    const skillsTitle = document.createElement('h3');
-    const skills = document.createElement('ul');
-    const icons = techIcons;
 
-    descriptionContainer.className = 'about-container';
+    descriptionContainer.className = 'description-container';
     title.className = 'about-title';
     description.className = 'about-description';
-    skillsTitle.className = 'skills-title';
-    skills.className = 'skills';
 
     title.innerText = 'About Me';
     description.innerText = 'As a software engineer I find in web development an excellent field where I can apply my skills building software, motivated by a life long learning philosophy. I enjoy transforming ideas into code. ';
+
+    descriptionContainer.appendChild(title);
+    descriptionContainer.appendChild(description);
+
+    return descriptionContainer;
+  }
+
+  static createSkills() {
+    const skillsContainer = document.createElement('div');
+    const skillsTitle = document.createElement('h3');
+    const skills = document.createElement('ul');
+
+    skillsContainer.className = 'skills-container';
     skillsTitle.innerText = 'Technologies I work with:';
 
-    icons.forEach((icon) => {
+    techIcons.forEach((icon) => {
       const li = document.createElement('li');
       const iconImg = new Image();
       li.className = 'skill-item';
@@ -46,11 +59,9 @@ export default class About {
       skills.appendChild(li);
     });
 
-    descriptionContainer.appendChild(title);
-    descriptionContainer.appendChild(description);
-    descriptionContainer.appendChild(skillsTitle);
-    descriptionContainer.appendChild(skills);
+    skillsContainer.appendChild(skillsTitle);
+    skillsContainer.appendChild(skills);
 
-    return descriptionContainer;
+    return skillsContainer;
   }
 }
