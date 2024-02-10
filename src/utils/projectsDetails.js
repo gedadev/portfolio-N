@@ -1,6 +1,7 @@
 import battleshipImg from '../assets/projects/battleship.png';
 import weatherImg from '../assets/projects/weather.png';
 import cartImg from '../assets/projects/shopping-cart.png';
+import weatherReactImg from '../assets/projects/weather-app-react.png';
 
 const projects = {
   onlineStore: {
@@ -17,7 +18,7 @@ const projects = {
     description: 'This react application shows the weather in your current location if you allow the location permission on your browser, otherwise you can write a city on the search box to get the forecast',
     repo: 'https://github.com/gedadev/weather-app',
     url: 'https://weather-app-er8.pages.dev/',
-    preview: weatherImg,
+    preview: weatherReactImg,
   },
   weatherReportJS: {
     title: 'Weather Report App',
