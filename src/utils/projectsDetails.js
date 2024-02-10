@@ -11,6 +11,22 @@ const projects = {
     url: 'https://shopping-cart-9kh.pages.dev',
     preview: cartImg,
   },
+  weatherReportReact: {
+    title: 'Weather Report App React Version',
+    technologies: 'react, css',
+    description: 'This react application shows the weather in your current location if you allow the location permission on your browser, otherwise you can write a city on the search box to get the forecast',
+    repo: 'https://github.com/gedadev/weather-app',
+    url: 'https://weather-app-er8.pages.dev/',
+    preview: weatherImg,
+  },
+  weatherReportJS: {
+    title: 'Weather Report App',
+    technologies: 'html, css, javascript, webpack',
+    description: 'This app allows you to search a city an get the details of the current weather conditions with the OpenWeather API data. If you allow the site to know your location, you can see the weather conditions in your city. It also shows the weather of the next days and the data can be displayed in metric or imperial units',
+    repo: 'https://github.com/gedadev/weatherReport',
+    url: 'https://gedadev.github.io/weatherReport/',
+    preview: weatherImg,
+  },
   battleship: {
     title: 'Battleship',
     technologies: 'html, css, javascript, webpack',
@@ -18,14 +34,6 @@ const projects = {
     repo: 'https://github.com/gedadev/battleship/',
     url: 'https://gedadev.github.io/battleship/',
     preview: battleshipImg,
-  },
-  weatherReport: {
-    title: 'Weather Report',
-    technologies: 'html, css, javascript, webpack',
-    description: 'This app allows you to search a city an get the details of the current weather conditions with the OpenWeather API data. If you allow the site to know your location, you can see the weather conditions in your city. It also shows the weather of the next days and the data can be displayed in metric or imperial units',
-    repo: 'https://github.com/gedadev/weatherReport',
-    url: 'https://gedadev.github.io/weatherReport/',
-    preview: weatherImg,
   },
 };
 
